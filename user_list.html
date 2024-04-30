@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+<div class="container" style="padding-top: 90px;">
+
+ <table class="table" style="border-collapse: collapse;">
+    
+    <tr style="background-color: brown;color: aliceblue;">
+
+        <th>ID</th>
+        <th>Email</th>
+        <th>Name</th>
+        <th>Action</th>
+
+    </tr>
+
+   <tr>
+
+    {% for i in userr %}
+
+    <td>{{i.id}}</td>
+
+    <td>{{i.email}}</td>
+
+    <td>{{i.first_name}}</td>
+
+    {% if i.id != 9 %}
+
+    <td><span style="font-size: 24px;color:red;">  
+        <a href="/{{i.id}}/delete_user"> <i class="fas fa-trash-alt"></i></a></span></td>
+
+    {% endif %}
+
+   
+ 
+    </tr>
+          
+    {% endfor %}
+    
+ </table>
+  
+</div>
+
+{% endblock %}
+
+

@@ -1,0 +1,203 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<!--================Home Banner Area =================-->
+  <!-- breadcrumb start-->
+  <section class="breadcrumb breadcrumb_bg">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="breadcrumb_iner">
+            <div class="breadcrumb_iner_item">
+              <h2>Cart Products</h2>
+              <p>Home <span>-</span>Cart Products</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- breadcrumb start-->
+
+  <!--================Cart Area =================-->
+  <section class="cart_area padding_top">
+    <div class="container">
+      <div class="cart_inner">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Product</th>
+                <th scope="col">Price</th>
+                <th scope="col">Remove</th>
+              </tr>
+            </thead>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <tbody>
+
+              {% for i in products %}
+              
+              <tr>
+
+                
+                
+                <td>
+                  
+                  <div class="media">
+                    
+                    <div class="d-flex">
+                      <img src="img/product/single-product/cart-1.jpg" alt="" />
+                    </div>
+                    <div class="media-body">
+                      <!-- <p>Minimalistic shop for multipurpose use</p> -->
+
+                      <p>{{i.title}}</p>
+
+
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <h5>${{i.price}}</h5>
+
+                </td>
+
+
+                <td><span style="font-size: 24px;color:red;">  
+                  <a href="/{{i.serial}}/delete_cart"> <i class="fas fa-trash-alt" style="color: red;"></i></a></span></td>
+            
+
+
+
+
+                {% endfor %}
+
+
+                <td>
+                  
+
+                </td>
+              </tr>
+
+
+              <tr class="bottom_button">
+                <td>
+                  <!-- <a class="btn_1" href="#">Update Cart</a> -->
+                </td>
+
+
+
+                
+                <td></td>
+                <td></td>
+                <td>                </td>
+              </tr>
+
+              <tr>
+                <td></td>
+                <td></td>
+                <td>
+                  <h5>Subtotal</h5>
+                </td>
+                <td>
+                  <h5>${{subtotal}}</h5>
+                </td>
+              </tr>
+
+              <tr class="shipping_area">
+                <td></td>
+                <td></td>
+
+                <td>
+                  <h5>Delivery Fee</h5>
+                </td>
+                <td>
+                  <div class="shipping_box">
+                    <ul class="list">
+                      <li>
+                        <h5>$5.00</h5>
+                      </li>
+                      
+
+                    </ul>
+
+                  </div>
+                </td>
+              </tr>
+
+
+              <tr class="shipping_area">
+                <td></td>
+                <td></td>
+
+                <td>
+                  <h5>Total</h5>
+                </td>
+                <td>
+                  <div class="shipping_box">
+                    <ul class="list">
+                      <li>
+                        <h5>${{grand_total}}</h5>
+                      </li>
+
+                    </ul>
+                    
+
+                  </div>
+                  
+                </td>
+                
+              </tr>
+
+              
+
+
+
+
+
+
+
+            </tbody>
+
+            
+          </table>
+
+          <h4 style="text-align: right;">Payment Methods</h4>
+          
+          <div class="checkout_btn_inner float-right">
+            
+            <a class="btn_1 checkout_btn_1" href=""><img src="static/img/logos/bkash.png" width="50"></a>
+            <a class="btn_1 checkout_btn_1" href=""><img src="static/img/logos/nagad.png" width="50"></a>
+            <a class="btn_1 checkout_btn_1" href=""><img src="static/img/logos/rock.png" width="50"></a>
+            <a class="btn_1 checkout_btn_1" href=""><img src="static/img/logos/cred_card.png" width="60"></a>
+            
+        
+          </div>
+
+        </div>
+      </div>
+  </section>
+
+  <!--================End Cart Area =================-->
+
+
+
+  {% endblock %}

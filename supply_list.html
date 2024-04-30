@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+<div class="container" style="padding-top: 90px;">
+
+    
+
+ <table class="table" style="border-collapse: collapse;">
+    
+    <tr style="background-color: brown;color: aliceblue;">
+        <th>Title</th>
+        <th>Price</th>
+        <th>Availibility</th>
+        <th>Action</th>
+    </tr>
+
+   <tr>
+
+    {% for i in supply %}
+
+    <td>{{i.title}}</td>
+    <td>${{i.price}}</td>
+    <td>{{i.quantity}}</td>
+
+    <td> <span style="font-size: 24px;color:green;">
+        <a href="/{{i.sp_id}}/edit"> <i class="fas fa-edit"></i></a> </span>
+         | <span style="font-size: 24px;color:red;">  
+           <a href="/{{i.sp_id}}/delete"> <i class="fas fa-trash-alt"></i></a></span></td>
+ 
+
+    </tr>
+          
+    {% endfor %}
+    
+   
+ </table>
+  
+</div>
+
+{% endblock %}
+
+

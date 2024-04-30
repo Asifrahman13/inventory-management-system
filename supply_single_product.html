@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<!-- breadcrumb start-->
+  <section class="breadcrumb breadcrumb_bg">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="breadcrumb_iner">
+            <div class="breadcrumb_iner_item">
+              <h2>Shop Single</h2>
+              <p>Home <span>-</span> Shop Single</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- breadcrumb start-->
+  <!--================End Home Banner Area =================-->
+
+  <!--================Single Product Area =================-->
+  <div class="product_image_area section_padding">
+    <div class="container">
+      <div class="row s_product_inner justify-content-between">
+        <div class="col-lg-7 col-xl-7">
+          <div class="product_slider_img">
+            <div id="vertical">
+              <div data-thumb="{{ url_for('static', filename='img/product/single-product/product_1.png') }}">
+                <img src="{{ url_for('static', filename='img/product/single-product/product_1.jpeg') }}" alt="">
+                
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 col-xl-4">
+          <div class="s_product_text">
+            <h5>previous <span>|</span> next</h5>
+            <h3>{{supply.title}}</h3>
+            <h2>${{supply.price}}</h2>
+            <ul class="list">
+
+              <li>
+                <a href="#"> <span>Availibility</span> : In Stock</a>
+              </li>
+            </ul>
+
+            <p>
+              {{supply.description}}
+            </p>
+
+            <p><b>
+              Exchange Policy: New, unused or defective merchandise may be returned or exchanged within 3 days.
+            </b>
+            </p>
+
+
+            <div class="card_area d-flex justify-content-between align-items-center">
+
+              <form action = "{{url_for('auth.cart')}}" method="post">
+
+                
+
+                <input type="hidden" name = "product_title" value = {{supply.title}}>
+
+                <input type="hidden" name = "product_price" value = {{supply.price}}>
+
+                
+
+                <button type="submit" class="btn_3">add to cart</button>
+
+
+              </form>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--================End Single Product Area =================-->
+
+
+
+  <!-- product_list part start-->
+
+  <!-- product_list part end-->
+
+
+
+  {% endblock %}

@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container" style="padding-top: 90px;">
+
+  <table class="table" style="border-collapse: collapse;">
+     
+    <tr style="background-color: brown;color: aliceblue;">
+ 
+         <th>Messages</th>
+         <th>Name</th>
+         <th>Email</th>
+         <th>Subject</th>
+         <th>Remove?</th>
+ 
+    </tr>
+ 
+    <tr>
+
+    {% for msg in contact %}
+
+
+    <td>{{msg.message}}</td>
+    <td>{{msg.name}}</td>
+    <td>{{msg.email}}</td>
+    <td>{{msg.subject}}</td>
+
+    
+
+    <td><span style="font-size: 24px;color:red;">  
+        <a href="/{{msg.srl}}/delete_message"> <i class="fas fa-trash-alt"></i></a></span></td>
+
+    
+
+
+
+    </tr>
+
+    {% endfor %}
+
+  </table>
+  
+</div>
+
+{% endblock %}
+
+
